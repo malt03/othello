@@ -1,0 +1,262 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 70.78      6.92     6.92 71454844     0.00     0.00  checkFlipOneVec(int, int, int**, int, int)
+ 18.03      8.68     1.76  8165560     0.00     0.00  checkFlip(int, int, int**, int)
+  5.02      9.17     0.49   272345     0.00     0.00  copyMap(int**, int**)
+  2.56      9.42     0.25   127585     0.00     0.00  flipableCount(int**, int)
+  2.46      9.66     0.24  1040194     0.00     0.00  flip(int, int, int**, int)
+  0.51      9.71     0.05    13775     0.00     0.00  stonePoint(int**, int)
+  0.31      9.74     0.03    13775     0.00     0.00  culMinPos(int**, int, int&, int&)
+  0.20      9.76     0.02        3     0.01     3.26  culBestPosRe(int**, int, int, int, int)
+  0.10      9.77     0.01    13775     0.00     0.00  countSettledStone(int**, int)
+  0.10      9.78     0.01      128     0.00     0.00  drawStone(int)
+  0.00      9.78     0.00   126151     0.00     0.00  flipOneVec(int, int, int**, int, int)
+  0.00      9.78     0.00    13775     0.00     0.00  culEvaluation(int**, int, int, int)
+  0.00      9.78     0.00        2     0.00     0.01  draw(int**, int)
+  0.00      9.78     0.00        1     0.00     0.00  _GLOBAL__sub_I_vec_x
+  0.00      9.78     0.00        1     0.00     9.77  culBestPos(int**, int, int&, int&, int)
+  0.00      9.78     0.00        1     0.00     0.00  turnChange(int&)
+  0.00      9.78     0.00        1     0.00     9.77  AI(int**, int, int)
+  0.00      9.78     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00      9.78     0.00        1     0.00     0.00  gameInit(int&, int**, int&)
+  0.00      9.78     0.00        1     0.00     0.00  firstInit()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.10% of 9.78 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00    9.78                 main [1]
+                0.00    9.77       1/1           AI(int**, int, int) [2]
+                0.00    0.01       2/2           draw(int**, int) [13]
+                0.00    0.00       2/13775       culEvaluation(int**, int, int, int) [5]
+                0.00    0.00       2/127585      flipableCount(int**, int) [6]
+                0.00    0.00       1/1040194     flip(int, int, int**, int) [10]
+                0.00    0.00       1/8165560     checkFlip(int, int, int**, int) [7]
+                0.00    0.00       1/1           firstInit() [25]
+                0.00    0.00       1/1           gameInit(int&, int**, int&) [24]
+                0.00    0.00       1/1           turnChange(int&) [22]
+-----------------------------------------------
+                0.00    9.77       1/1           main [1]
+[2]     99.9    0.00    9.77       1         AI(int**, int, int) [2]
+                0.00    9.77       1/1           culBestPos(int**, int, int&, int&, int) [3]
+                0.00    0.00       1/1040194     flip(int, int, int**, int) [10]
+-----------------------------------------------
+                0.00    9.77       1/1           AI(int**, int, int) [2]
+[3]     99.9    0.00    9.77       1         culBestPos(int**, int, int&, int&, int) [3]
+                0.02    9.75       3/3           culBestPosRe(int**, int, int, int, int) [4]
+                0.00    0.00      64/1040194     flip(int, int, int**, int) [10]
+                0.00    0.00       4/272345      copyMap(int**, int**) [11]
+-----------------------------------------------
+                               16247             culBestPosRe(int**, int, int, int, int) [4]
+                0.02    9.75       3/3           culBestPos(int**, int, int&, int&, int) [3]
+[4]     99.9    0.02    9.75       3+16247   culBestPosRe(int**, int, int, int, int) [4]
+                0.00    8.26   13773/13775       culEvaluation(int**, int, int, int) [5]
+                0.03    1.00   16247/127585      flipableCount(int**, int) [6]
+                0.29    0.00  161005/272345      copyMap(int**, int**) [11]
+                0.04    0.12  158528/1040194     flip(int, int, int**, int) [10]
+                               16247             culBestPosRe(int**, int, int, int, int) [4]
+-----------------------------------------------
+                0.00    0.00       2/13775       main [1]
+                0.00    8.26   13773/13775       culBestPosRe(int**, int, int, int, int) [4]
+[5]     84.5    0.00    8.26   13775         culEvaluation(int**, int, int, int) [5]
+                0.03    7.30   13775/13775       culMinPos(int**, int, int&, int&) [8]
+                0.03    0.85   13775/127585      flipableCount(int**, int) [6]
+                0.05    0.00   13775/13775       stonePoint(int**, int) [12]
+                0.01    0.00   13775/13775       countSettledStone(int**, int) [14]
+-----------------------------------------------
+                0.00    0.00       2/127585      main [1]
+                0.03    0.85   13775/127585      culEvaluation(int**, int, int, int) [5]
+                0.03    1.00   16247/127585      culBestPosRe(int**, int, int, int, int) [4]
+                0.19    6.02   97561/127585      culMinPos(int**, int, int&, int&) [8]
+[6]     83.1    0.25    7.87  127585         flipableCount(int**, int) [6]
+                1.76    6.11 8165440/8165560     checkFlip(int, int, int**, int) [7]
+-----------------------------------------------
+                0.00    0.00       1/8165560     main [1]
+                0.00    0.00     119/8165560     draw(int**, int) [13]
+                1.76    6.11 8165440/8165560     flipableCount(int**, int) [6]
+[7]     80.5    1.76    6.11 8165560         checkFlip(int, int, int**, int) [7]
+                6.11    0.00 63133292/71454844     checkFlipOneVec(int, int, int**, int, int) [9]
+-----------------------------------------------
+                0.03    7.30   13775/13775       culEvaluation(int**, int, int, int) [5]
+[8]     74.9    0.03    7.30   13775         culMinPos(int**, int, int&, int&) [8]
+                0.19    6.02   97561/127585      flipableCount(int**, int) [6]
+                0.20    0.68  881600/1040194     flip(int, int, int**, int) [10]
+                0.20    0.00  111336/272345      copyMap(int**, int**) [11]
+-----------------------------------------------
+                0.81    0.00 8321552/71454844     flip(int, int, int**, int) [10]
+                6.11    0.00 63133292/71454844     checkFlip(int, int, int**, int) [7]
+[9]     70.7    6.92    0.00 71454844         checkFlipOneVec(int, int, int**, int, int) [9]
+-----------------------------------------------
+                0.00    0.00       1/1040194     main [1]
+                0.00    0.00       1/1040194     AI(int**, int, int) [2]
+                0.00    0.00      64/1040194     culBestPos(int**, int, int&, int&, int) [3]
+                0.04    0.12  158528/1040194     culBestPosRe(int**, int, int, int, int) [4]
+                0.20    0.68  881600/1040194     culMinPos(int**, int, int&, int&) [8]
+[10]    10.7    0.24    0.81 1040194         flip(int, int, int**, int) [10]
+                0.81    0.00 8321552/71454844     checkFlipOneVec(int, int, int**, int, int) [9]
+                0.00    0.00  126151/126151      flipOneVec(int, int, int**, int, int) [20]
+-----------------------------------------------
+                0.00    0.00       4/272345      culBestPos(int**, int, int&, int&, int) [3]
+                0.20    0.00  111336/272345      culMinPos(int**, int, int&, int&) [8]
+                0.29    0.00  161005/272345      culBestPosRe(int**, int, int, int, int) [4]
+[11]     5.0    0.49    0.00  272345         copyMap(int**, int**) [11]
+-----------------------------------------------
+                0.05    0.00   13775/13775       culEvaluation(int**, int, int, int) [5]
+[12]     0.5    0.05    0.00   13775         stonePoint(int**, int) [12]
+-----------------------------------------------
+                0.00    0.01       2/2           main [1]
+[13]     0.1    0.00    0.01       2         draw(int**, int) [13]
+                0.01    0.00     128/128         drawStone(int) [15]
+                0.00    0.00     119/8165560     checkFlip(int, int, int**, int) [7]
+-----------------------------------------------
+                0.01    0.00   13775/13775       culEvaluation(int**, int, int, int) [5]
+[14]     0.1    0.01    0.00   13775         countSettledStone(int**, int) [14]
+-----------------------------------------------
+                0.01    0.00     128/128         draw(int**, int) [13]
+[15]     0.1    0.01    0.00     128         drawStone(int) [15]
+-----------------------------------------------
+                0.00    0.00  126151/126151      flip(int, int, int**, int) [10]
+[20]     0.0    0.00    0.00  126151         flipOneVec(int, int, int**, int, int) [20]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [33]
+[21]     0.0    0.00    0.00       1         _GLOBAL__sub_I_vec_x [21]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [23]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[22]     0.0    0.00    0.00       1         turnChange(int&) [22]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I_vec_x [21]
+[23]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [23]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[24]     0.0    0.00    0.00       1         gameInit(int&, int**, int&) [24]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[25]     0.0    0.00    0.00       1         firstInit() [25]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+  [21] _GLOBAL__sub_I_vec_x    [6] flipableCount(int**, int) [11] copyMap(int**, int**)
+   [3] culBestPos(int**, int, int&, int&, int) [9] checkFlipOneVec(int, int, int**, int, int) [24] gameInit(int&, int**, int&)
+  [20] flipOneVec(int, int, int**, int, int) [14] countSettledStone(int**, int) [7] checkFlip(int, int, int**, int)
+  [12] stonePoint(int**, int)  [2] AI(int**, int, int)     [8] culMinPos(int**, int, int&, int&)
+  [22] turnChange(int&)       [23] __static_initialization_and_destruction_0(int, int) [15] drawStone(int)
+   [4] culBestPosRe(int**, int, int, int, int) [13] draw(int**, int) [25] firstInit()
+   [5] culEvaluation(int**, int, int, int) [10] flip(int, int, int**, int)
